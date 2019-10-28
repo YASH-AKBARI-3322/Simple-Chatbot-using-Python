@@ -1,0 +1,38 @@
+# Description: This is a chat bot
+#import the library
+from nltk.chat.util import Chat, reflections
+pairs = [
+    ['my name is (.*)',['hi %1']],
+    ['(hi|hello|hey|hola|hollaa)', ['hey there', 'hi there', 'haayyy']],
+    ['(.*) in (.*) is fun', ['%1 in %2 is indeed fun']],
+    ['(.*)(location|city) ?', 'Bengaluru, Chennai'],
+    ['(.*)created you ?', ['theservermonk using NLTK']],
+    ['(.*) is the weather in (.*)', ['the weather in %1 is amazing like always']],
+    ['(.*)help(.*)',['I can help you']],
+    ['(.*) your name ?', ['my name is ladyPy']]
+]
+my_dummy_reflections = {
+    'go' : 'gone',
+    'hello' : 'hey there'
+}
+chat = Chat(pairs, my_dummy_reflections)
+#chat._substitute('go hello')
+chat.converse()
+
+
+
+Output:
+
+
+>hi
+haayyy
+>whats the weather in Chennai?
+None
+>what is the weather in Chennai?
+the weather in what is amazing like always
+>who created you
+theservermonk using NLTK
+>Whats your name?
+my name is ladyPy
+>can you help me out?
+I can help you
